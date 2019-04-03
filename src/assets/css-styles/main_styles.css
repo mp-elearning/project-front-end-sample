@@ -993,7 +993,7 @@ section
 
 .testimonials
 {
-	padding-top: 195px;
+	padding-top: 50px;
 	z-index: 2;
 }
 .section_title_dark h2
@@ -1052,10 +1052,10 @@ section
 }
 .testimonials_content
 {
-	padding-left: 120px;
-	padding-right: 120px;
-	padding-bottom: 49px;
-	padding-top: 120px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	padding-top: 50px;
 	max-width: 100%;
 }
 .test_name
