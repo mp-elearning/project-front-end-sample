@@ -8,6 +8,11 @@ import { BlockchainBlogsComponent } from './blockchain-blogs/blockchain-blogs.co
 import { GreBlogsComponent } from './gre-blogs/gre-blogs.component';
 import { BitcoinBlogsComponent } from './bitcoin-blogs/bitcoin-blogs.component';
 import { EachBlogComponent } from './blogs/each-blog/each-blog.component';
+import { VideosComponent } from './videos/videos.component';
+
+
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +21,13 @@ import { EachBlogComponent } from './blogs/each-blog/each-blog.component';
     BlockchainBlogsComponent,
     GreBlogsComponent,
     BitcoinBlogsComponent,
-    EachBlogComponent
+    EachBlogComponent,
+    VideosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxYoutubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

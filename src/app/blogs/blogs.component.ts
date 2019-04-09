@@ -15,7 +15,7 @@ import { AppRoutingModule } from '../app-routing.module'
 export class BlogsComponent implements OnInit {
 
   constructor(
-    private router : Router 
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -57,7 +57,8 @@ export class BlogsComponent implements OnInit {
       }else{
         this.router.navigateByUrl('bitcoin')
       }
-      
+
 
     }
-}
+
+  }
