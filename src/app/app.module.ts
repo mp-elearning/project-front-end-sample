@@ -7,6 +7,7 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { BlockchainBlogsComponent } from './blockchain-blogs/blockchain-blogs.component';
 import { GreBlogsComponent } from './gre-blogs/gre-blogs.component';
 import { BitcoinBlogsComponent } from './bitcoin-blogs/bitcoin-blogs.component';
+import { EachBlogComponent } from './blogs/each-blog/each-blog.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BitcoinBlogsComponent } from './bitcoin-blogs/bitcoin-blogs.component';
     BlogsComponent,
     BlockchainBlogsComponent,
     GreBlogsComponent,
-    BitcoinBlogsComponent
+    BitcoinBlogsComponent,
+    EachBlogComponent
   ],
   imports: [
     BrowserModule,
