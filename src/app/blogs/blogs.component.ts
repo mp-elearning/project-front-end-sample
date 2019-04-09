@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module'
 
 @Component({
   selector: 'app-blogs',
@@ -12,7 +14,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router : Router 
+  ) { }
 
   ngOnInit() {
   }
@@ -43,4 +47,17 @@ export class BlogsComponent implements OnInit {
      },
 
     ]
+
+    onSubmit(i){
+      console.log(i)
+      if(i=='GRE'){
+        this.router.navigateByUrl('gre')
+      }else if(i=='blockchain'){
+        this.router.navigateByUrl('blockchain')
+      }else{
+        this.router.navigateByUrl('bitcoin')
+      }
+      
+
+    }
 }

@@ -24,7 +24,9 @@
                     <div class="testimonials_content">
                       <div class="test_name">tags</div>
                       <!-- <div class="test_title">AUTHOR</div> -->
-                      <p *ngFor="let i of data.tags"> {{i}} </p>
+                      <p *ngFor="let i of data.tags">
+                        <button class="btn" style="background-color: orangered;color :aliceblue" (click)="onSubmit(i)" >{{i}} </button>
+                        </p>
                     </div>
                   </div>
                 </div>	
