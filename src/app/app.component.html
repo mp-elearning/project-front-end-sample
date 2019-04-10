@@ -10,9 +10,11 @@
 			<ul class="nav_items">
 				<!-- <li ><span></span></li> -->
 				<li class="active"><a href="#"><span>home</span></a></li>
-				<li><span>videos</span></li>
-				<li><span>elements</span></li>
-				<li><span>blog</span></li>
+				<li><span><a routerLink = "/videos" routerLinkActive= "active">videos</a></span></li>
+                <li><span>elements</span></li>
+
+				<li><span><a routerLink = "/blogs" routerLinkActive= "active">blog</a></span></li>
+
 				<li><span>username</span></li>
 			</ul>
 		</nav>
@@ -54,16 +56,12 @@
 		</div>
 	</div>
 
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
 <!-- <app-blogs></app-blogs> -->
 <!-- <app-blockchain-blogs></app-blockchain-blogs> -->
 <!-- <app-gre-blogs></app-gre-blogs> -->
 <!-- <app-each-blog></app-each-blog> -->
 
-	<!-- <router-outlet></router-outlet> -->
-<!-- <app-blogs></app-blogs> -->
-<!-- <app-blockchain-blogs></app-blockchain-blogs> -->
-<!-- <app-gre-blogs></app-gre-blogs> -->
 <app-videos></app-videos>
 
 	<!-- Footer -->

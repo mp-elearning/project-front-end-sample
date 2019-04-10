@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
               '../assets/css-styles/elements_styles.css',
               '../assets/css-styles/responsive.css'
             ]
-})
+
+          })
 export class AppComponent {
   title = 'angular-front-end';
 }
