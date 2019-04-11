@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { dataCallBlogsService } from 'src/app/services/data-call-blogs.service';
+import { blogData } from 'src/app/classes/blog-data';
 
 @Component({
   selector: 'app-bitcoin-blogs',
@@ -11,7 +13,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BitcoinBlogsComponent implements OnInit {
 
-  constructor() { }
+  bData:blogData;
+
+  constructor(
+    blogData : blogData,
+    blogService :  dataCallBlogsService
+  ) { 
+    console.log('reached')
+
+    blogService.getdata().subscribe(
+      data=>{
+        this.bData = data
+        console.log(this.bData)
+      },(e)=>{
+        console.log(e)
+      }
+    )
+  }
 
   ngOnInit() {
   }

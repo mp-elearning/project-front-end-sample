@@ -1,4 +1,21 @@
-<div class="testimonials" *ngFor = "let data of blogData" >
+<div class="home prlx_parent">
+
+		<!-- Parallax Background -->
+	<div class="home_background prlx" style="background-image:url(../assets/images/blog_background.jpg)"></div>
+	<div class="services_page_shapes" style="background-image:url(../assets/images/services_page_shapes.png)"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="home_content" align="center" >
+						<h1>Blog</h1>
+					<span>read the news</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="testimonials" *ngFor = "let data of bData" >
     <div class="row">
       <div class="col-lg-1 offset-lg-1"></div>
         <div class="col-lg-7 offset-lg-1">
@@ -7,9 +24,16 @@
             <div class="owl-carousel owl-theme testimonials_slider">
               <div class="owl-item testimonials_item d-flex flex-column align-items-center justify-content-center text-center">
                 <div class="testimonials_content">
-                  <div class="test_name">{{data.title}}</div>
-                  <div class="test_title"> -  {{data.author}}</div>
-                  <p>{{data.contentSummary}}</p>
+                  <div class="test_name">{{data.Title}}</div>
+                  <div class="test_title"> -  {{data.Author}}</div>
+                  <p>{{data.sum}}</p>
+                  <br><br>
+                  <p align=" left ">
+                    Score : <span style="color:orangered" >{{data.sc}} </span>
+                  </p>
+                  <p align="right"  >
+                      <button class="btn btn-default" style="color:orangered"  (click)="viewBlogs(data)" >READ MORE>>> </button>
+                  </p>
                 </div>
               </div>
             </div>	
@@ -24,7 +48,7 @@
                     <div class="testimonials_content">
                       <div class="test_name">tags</div>
                       <!-- <div class="test_title">AUTHOR</div> -->
-                      <p *ngFor="let i of data.tags">
+                      <p *ngFor="let i of data.key">
                         <button class="btn" style="background-color: orangered;color :aliceblue" (click)="onSubmit(i)" >{{i}} </button>
                         </p>
                     </div>

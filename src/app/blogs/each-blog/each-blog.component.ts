@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-each-blog',
@@ -15,8 +16,12 @@ import { Component, OnInit } from '@angular/core';
               ]
 })
 export class EachBlogComponent implements OnInit {
-
-  constructor() { }
+  data
+  constructor(route:ActivatedRoute) {
+    console.log('in each blog')
+    this.data=route.snapshot.params["d"];
+    // console.log((route.snapshot.params.d))
+   }
 
   ngOnInit() {
   }

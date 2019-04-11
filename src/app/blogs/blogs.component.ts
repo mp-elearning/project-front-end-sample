@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module'
+import { dataCallBlogsService } from 'src/app/services/data-call-blogs.service';
+import { blogData } from 'src/app/classes/blog-data';
 
 @Component({
   selector: 'app-blogs',
@@ -14,9 +16,23 @@ import { AppRoutingModule } from '../app-routing.module'
 })
 export class BlogsComponent implements OnInit {
 
+  bData:blogData;
   constructor(
-    private router : Router
-  ) { }
+    private router : Router ,
+    blogData : blogData,
+    blogService :  dataCallBlogsService
+  ) { 
+    console.log('reached')
+
+    blogService.getdata().subscribe(
+      data=>{
+        this.bData = data
+        console.log(this.bData)
+      },(e)=>{
+        console.log(e)
+      }
+    )
+  }
 
   ngOnInit() {
   }
@@ -57,8 +73,11 @@ export class BlogsComponent implements OnInit {
       }else{
         this.router.navigateByUrl('bitcoin')
       }
+    }
 
-
+    viewBlogs(d:any){
+      console.log(d)
+      this.router.navigate(['eachblog',{data:d}])
     }
 
   }

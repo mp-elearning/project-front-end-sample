@@ -12,6 +12,10 @@ import { EachBlogComponent } from './blogs/each-blog/each-blog.component';
 
 
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { dataCallBlogsService } from 'src/app/services/data-call-blogs.service';
+import { blogData } from 'src/app/classes/blog-data';
+// import { HttpClient } from '@angular/common/http';
+import { HttpClientModule  } from '@angular/common/http';
 
 
 @NgModule({
@@ -27,9 +31,11 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxYoutubePlayerModule
+    HttpClientModule,
+    NgxYoutubePlayerModule,
+
   ],
-  providers: [],
+  providers: [dataCallBlogsService,blogData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
