@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,9 @@ import { AuthService } from '../auth/auth.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              public router : Router
+    ) { }
 
   ngOnInit() {
   }
@@ -21,6 +24,7 @@ export class SignInComponent implements OnInit {
     console.log("Hi")
 
     this.authService.signinUser(email, password);
+    this.router.navigate(['blogs'])
 
   }
 }
