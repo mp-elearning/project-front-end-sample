@@ -13,7 +13,7 @@
 				<li><span><a routerLink = "/videos" routerLinkActive= "active">videos</a></span></li>
 				<li><span><a routerLink = "/blogs" routerLinkActive= "active">blog</a></span></li>
 
-				<li><span *ngIf="router.url != '/signup' && router.url != '/signin'" >Palak Keni</span></li>
+				<li><span *ngIf="router.url != '/signup' && router.url != '/signin'" >{{this.angularFireAuth.auth.currentUser}}</span></li>
 			</ul>
 		</nav>
 	</header>

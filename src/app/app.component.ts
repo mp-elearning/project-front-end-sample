@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,8 +15,10 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   constructor(
-    public router: Router
+    public router: Router,
+    private angularFireAuth: AngularFireAuth
   ){
+    console.log(this.angularFireAuth.auth.currentUser)
 
   }
   title = 'angular-front-end';
