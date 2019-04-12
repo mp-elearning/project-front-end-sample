@@ -25,6 +25,7 @@ import { blogData } from 'src/app/classes/blog-data';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
 
 var config = {
   apiKey: "AIzaSyBp1flSQ2eO4HKbbAGNnYjcuq9rYwGEP20",
@@ -47,6 +48,7 @@ var config = {
     UserDetailsComponent,
     SignInComponent,
     SignUpComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

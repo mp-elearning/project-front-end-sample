@@ -8,6 +8,7 @@ import { VideosComponent } from './videos/videos.component';
 import { EachBlogComponent } from 'src/app/blogs/each-blog/each-blog.component';
 import { SignInComponent } from 'src/app/sign-in/sign-in.component';
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
  
@@ -20,6 +21,8 @@ const routes: Routes = [
     {path: 'eachblog', component : EachBlogComponent},
     {path: 'signin',  component: SignInComponent },
     {path: 'signup',  component:SignUpComponent},
+    {path: 'home',  component:HomeComponent},
+
 
     
     
