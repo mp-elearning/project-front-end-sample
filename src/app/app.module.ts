@@ -1,5 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { HttpClientModule  } from '@angular/common/http';
+
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,12 +17,23 @@ import { EachBlogComponent } from './blogs/each-blog/each-blog.component';
 //import { VideosComponent } from './videos/videos.component'; working
 
 
-import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+
 import { dataCallBlogsService } from 'src/app/services/data-call-blogs.service';
 import { blogData } from 'src/app/classes/blog-data';
 // import { HttpClient } from '@angular/common/http';
-import { HttpClientModule  } from '@angular/common/http';
 
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+
+var config = {
+  apiKey: "AIzaSyBp1flSQ2eO4HKbbAGNnYjcuq9rYwGEP20",
+  authDomain: "mp-user-data.firebaseapp.com",
+  databaseURL: "https://mp-user-data.firebaseio.com",
+  projectId: "mp-user-data",
+  storageBucket: "mp-user-data.appspot.com",
+  messagingSenderId: "797727661249"
+};
 
 @NgModule({
   declarations: [
@@ -26,13 +43,19 @@ import { HttpClientModule  } from '@angular/common/http';
     GreBlogsComponent,
     BitcoinBlogsComponent,
     EachBlogComponent,
-    routingComponents
+    routingComponents,
+    UserDetailsComponent,
+    SignInComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxYoutubePlayerModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireAuthModule,
+    FormsModule
 
   ],
   providers: [dataCallBlogsService,blogData],

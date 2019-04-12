@@ -6,6 +6,8 @@ import { GreBlogsComponent } from 'src/app/gre-blogs/gre-blogs.component';
 import { BlockchainBlogsComponent } from 'src/app/blockchain-blogs/blockchain-blogs.component';
 import { VideosComponent } from './videos/videos.component';
 import { EachBlogComponent } from 'src/app/blogs/each-blog/each-blog.component';
+import { SignInComponent } from 'src/app/sign-in/sign-in.component';
+import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 
 const routes: Routes = [
  
@@ -16,6 +18,8 @@ const routes: Routes = [
     {path : 'blockchain', component : BlockchainBlogsComponent},
     {path: 'videos', component : VideosComponent},
     {path: 'eachblog', component : EachBlogComponent},
+    {path: 'signin',  component: SignInComponent },
+    {path: 'signup',  component:SignUpComponent},
 
     
     
