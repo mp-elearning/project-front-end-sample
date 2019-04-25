@@ -15,7 +15,7 @@
   </div>
 </div>
 </div>
-<div class="testimonials" *ngFor = "let data of bData" >
+<div class="testimonials" *ngFor = "let data of blogData" >
   <div class="row">
     <div class="col-lg-1 offset-lg-1"></div>
       <div class="col-lg-7 offset-lg-1">
@@ -24,13 +24,10 @@
           <div class="owl-carousel owl-theme testimonials_slider">
             <div class="owl-item testimonials_item d-flex flex-column align-items-center justify-content-center text-center">
               <div class="testimonials_content">
-                <div class="test_name">{{data.Title}}</div>
-                <div class="test_title"> -  {{data.Author}}</div>
-                <p>{{data.sum}}</p>
+                <div class="test_name">{{data.title}}</div>
+                <div class="test_title"> -  {{data.author}}</div>
+                <p>{{data.contentSummary}}</p>
                 <br><br>
-                <p align=" left ">
-                  Score : <span style="color:orangered" >{{data.sc}} </span>
-                </p>
                 <p align="right"  >
                     <button class="btn btn-default" style="color:orangered"  (click)="viewBlogs(data)" >READ MORE>>> </button>
                 </p>
@@ -39,22 +36,70 @@
           </div>	
         </div>
       </div>
-      <div class="col-lg-1 offset-lg-1"></div>
-      <div class="col-lg-3 offset-lg-1" >
-          <div class="testimonials_container">
-              <div class="testimonials_container_inner"></div>
-              <div class="owl-carousel owl-theme testimonials_slider">
-                <div class="owl-item testimonials_item d-flex flex-column align-items-center justify-content-center text-center">
-                  <div class="testimonials_content">
-                    <div class="test_name">tags</div>
-                    <!-- <div class="test_title">AUTHOR</div> -->
-                    <p *ngFor="let i of data.key">
-                      <button class="btn" style="background-color: orangered;color :aliceblue" (click)="onSubmit(i)" >{{i}} </button>
-                      </p>
-                  </div>
-                </div>
-              </div>	
-            </div>
-      </div>	
+      <div class="col-lg-1 offset-lg-1"></div>	
     </div>	
   </div>
+  <div class="home prlx_parent">
+
+    <!-- Parallax Background -->
+  <div class="home_background prlx" style="background-image:url(../assets/images/blog_background.jpg)"></div>
+  <div class="services_page_shapes" style="background-image:url(../assets/images/services_page_shapes.png)"></div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="home_content" align="center" >
+            <h1>Today's Popular Videos </h1>
+          <span>see the world</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="testimonials" *ngFor = "let data of bData" >
+    <div class="row">
+      <div class="col-lg-1 offset-lg-1"></div>
+        <div class="col-lg-7 offset-lg-1">
+          <div class="testimonials_container">
+            <div class="testimonials_container_inner"></div>
+            <div class="owl-carousel owl-theme testimonials_slider">
+              <div class="owl-item testimonials_item d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="testimonials_content">
+                  <div class="test_name">{{data.title}}</div>
+                  <div class="test_title"> -  {{data.author}}</div>
+                  <p>{{data.contentSummary}}</p>
+              
+              
+                  <youtube-player
+                  [videoId]="data.id"
+                  (ready)="savePlayer($event)"
+                  (change)="onStateChange($event)"
+                  ></youtube-player>
+                  
+  
+  
+                </div>
+              </div>
+            </div>	
+          </div>
+        </div>
+        <div class="col-lg-1 offset-lg-1"></div>
+        <div class="col-lg-3 offset-lg-1" >
+            <div class="testimonials_container">
+                <div class="testimonials_container_inner"></div>
+                <div class="owl-carousel owl-theme testimonials_slider">
+                  <div class="owl-item testimonials_item d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="testimonials_content">
+                      <div class="test_name">tags</div>
+                      <!-- <div class="test_title">AUTHOR</div> -->
+                      <p *ngFor="let i of data.tags">
+                        <button class="btn" style="background-color: orangered;color :aliceblue" (click)="onSubmit(i)" >{{i}} </button>
+                        </p>
+                    </div>
+                  </div>
+                </div>	
+              </div>
+        </div>	
+      </div>	
+    </div>
+  

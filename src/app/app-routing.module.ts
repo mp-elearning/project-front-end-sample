@@ -12,14 +12,13 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
  
-    //{path : '', component : },
     {path : 'blogs', component : BlogsComponent},
     {path : 'bitcoin', component : BitcoinBlogsComponent},
     {path : 'gre', component : GreBlogsComponent},
     {path : 'blockchain', component : BlockchainBlogsComponent},
     {path: 'videos', component : VideosComponent},
     {path: 'eachblog', component : EachBlogComponent},
-    {path: 'signin',  component: SignInComponent },
+    {path: '',  component: SignInComponent },
     {path: 'signup',  component:SignUpComponent},
     {path: 'home',  component:HomeComponent},
 

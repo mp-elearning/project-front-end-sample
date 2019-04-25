@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
+import * as firebase from "firebase";
 
 
 @Component({
@@ -13,7 +14,10 @@ export class SignInComponent implements OnInit {
 
   constructor(private authService: AuthService,
               public router : Router
-    ) { }
+    ) { 
+      console.log(firebase.auth().currentUser);
+
+    }
 
   ngOnInit() {
   }
@@ -24,7 +28,9 @@ export class SignInComponent implements OnInit {
     console.log("Hi")
 
     this.authService.signinUser(email, password);
-    this.router.navigate(['blogs'])
+    console.log(firebase.auth());
+
+    this.router.navigate(['home'])
 
   }
 }
